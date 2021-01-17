@@ -1,0 +1,21 @@
+version: "2.1"
+services:
+    covidServer:
+        build:
+            context: .
+            dockerfile: covidServer/Dockerfile
+        image: covidserver:${TAG}
+        ports:
+            - "8020:80"
+        container_name: ctcovidserver
+        restart: unless-stopped
+        networks:
+            project_network:
+                ipv4_address: ${COVID_SERVER_URL}
+networks:
+    project_network:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.1.0.0/24
+                  gateway: 10.1.0.1
