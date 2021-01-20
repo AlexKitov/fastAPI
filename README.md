@@ -1,3 +1,7 @@
+# Run Jupyter notebook
+This parameter is need in for the correct visualizations at the end 
+`jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10`
+
 # fastAPI
 Experiment with fastAPI framework
 
